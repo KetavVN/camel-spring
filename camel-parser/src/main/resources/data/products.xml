@@ -1,0 +1,22 @@
+<products>
+	<product id="1">
+		<description>product 1</description>
+		<imageUrl>http://localhost:8080/</imageUrl>
+		<price>12345.67890</price>
+		<createdBy>
+			<fname>ketav</fname>
+			<lname>nathwani</lname>
+			<age>32</age>
+		</createdBy>
+	</product>
+	<product id="2">
+		<description>product 2</description>
+		<imageUrl>http://localhost:8080/</imageUrl>
+		<price>62345.67890</price>
+		<createdBy>
+			<fname>ketav</fname>
+			<lname>nathwani</lname>
+			<age>32</age>
+		</createdBy>
+	</product>
+</products>
