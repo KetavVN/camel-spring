@@ -11,7 +11,7 @@ public class MyXMLRoute2 extends RouteBuilder {
 		
 		from("file:src/main/resources/data?antInclude=*.xml")
 		.choice()
-			.when(xpath("/products/product[contains ('1 3', accNum)]"))
+			.when(xpath("/products/product[contains ('1 3', accNum) and contains('product1 product4', description)]"))
 			.setHeader("accNum", xpath("/products/product/accNum", Long.class))
 			.process(new SimpleCSVProcessor())
 			.bean(ProductsConsumer2.class, "consume2(${file:name}, ${headers.accNum})")
