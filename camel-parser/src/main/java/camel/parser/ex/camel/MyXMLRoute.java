@@ -23,11 +23,17 @@ public class MyXMLRoute extends RouteBuilder {
 		// JSON Data Format
 		JacksonDataFormat json = new JacksonDataFormat(Products.class);
 		
+		//xpath : https://cleverbuilder.com/articles/camel-choice-when/
+		//xpath contains: https://stackoverflow.com/questions/3025885/xpath-1-0-to-find-if-an-elements-value-is-in-a-list-of-values
 		from("file:src/main/resources/data?antInclude=*.xml")
-		.unmarshal(xml)
-		.process(new SimpleXMLProcessor())
-		.marshal(json)
-		.to("jms:queue:productsQueue");
+		.choice()
+			.when(xpath("/products/product[contains ('1 3', accNum)]"))
+			.unmarshal(xml)
+			.process(new SimpleXMLProcessor())
+			.marshal(json)
+			.to("jms:queue:productsQueue")
+		.end();
+		
 	}
 
 }

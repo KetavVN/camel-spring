@@ -13,6 +13,9 @@ public class Product {
 	@XmlAttribute(name = "id")
 	private String productId;
 	
+	@XmlElement(name = "accNum")
+	private Long accountNumber;
+	
 	@XmlElement(name = "description")
 	private String description;
 	
@@ -27,9 +30,10 @@ public class Product {
 	
 	public Product(){}
 	
-	public Product(String productId, String description, String imageUrl,
+	public Product(String productId, Long accNum1, String description, String imageUrl,
 			BigDecimal price, Person createdBy) {
 		this.productId = productId;
+		this.accountNumber = accNum1;
 		this.description = description;
 		this.imageUrl = imageUrl;
 		this.price = price;
@@ -38,8 +42,8 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return String.format("Product [productId=%s, description=%s, imageUrl=%s, price=%s, createdBy=%s]", productId,
-				description, imageUrl, price, createdBy);
+		return String.format("Product [productId=%s, accountNumber=%d, description=%s, imageUrl=%s, price=%s, createdBy=%s]", 
+				productId, accountNumber, description, imageUrl, price, createdBy);
 	}
 	
 }

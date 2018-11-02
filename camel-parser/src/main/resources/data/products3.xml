@@ -1,0 +1,24 @@
+<products>
+	<product id="1">
+		<accNum>3</accNum>
+		<description>product 1</description>
+		<imageUrl>http://localhost:8080/</imageUrl>
+		<price>12345.67890</price>
+		<createdBy>
+			<fname>asdf</fname>
+			<lname>opiu</lname>
+			<age>24</age>
+		</createdBy>
+	</product>
+	<product id="2">
+		<accNum>3</accNum>
+		<description>product 2</description>
+		<imageUrl>http://localhost:8080/</imageUrl>
+		<price>62345.67890</price>
+		<createdBy>
+			<fname>zxcv</fname>
+			<lname>poiu</lname>
+			<age>23</age>
+		</createdBy>
+	</product>
+</products>
